@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #cf375d90;
+        }
+
+        #card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: #ffebcd;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #heart {
+            position: absolute;
+            top: 30%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 90px;
+            background-color: #ff4040;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 70%, 25% 100%, 0% 35%);
+            animation: heartbeat 1s infinite;
+        }
+        #heart1 {
+            position: absolute;
+            top: -220%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 90px;
+            background-color: #ff4040;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 70%, 25% 100%, 0% 35%);
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #message {
+            
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            color: #4a4a4a;
+        }
+        h2{
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            line-height: 1.4;
+            color: #ff4040;
+            text-shadow: 2px 2px rgb(151, 141, 141);
+        }
+        h2:hover{
+            color: pink ;
+        }
+        img{
+            position: absolute;
+            right: 80px;
+            bottom: 130px;
+            height: 140px;
+            width: 120px;
+            border-radius: 10px;
+            box-shadow: 2px 6px;
+        }
+        .para{
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            font-weight: bold ;
+            color: #0f0c0c;
+        }
+        source{
+            height: 5px;
+            width: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card" onclick="changeMessage()">
+        <div id="heart"></div>
+        <div id="message">
+           
+            <h2>Happy Valentine's Day Kranti!</h2>
+            <p class="para">Pathak is yours:  No Returns,no Refunds!</p>
+            <p>click to see thobda</p>
+        </div>
+        <audio controls autoplay>
+            <source src="WhatsApp Audio 2024-02-14 at 19.54.50.mpeg" type="audio/ogg">
+            
+          Your browser does not support the audio element.
+          </audio>
+    </div>
+
+    <script>
+        function changeMessage() {
+            var message = document.getElementById('message');
+            message.innerHTML = `
+            <div id="heart1"></div>
+                <h2>Mera Krantu! &#128531</h2>
+                <img src="IMG-20230417-WA0005 (2).jpg" alt="">
+                <p class="para">Jyada mat ladha karo &#128536</p>
+            `;
+        }
+    </script>
+</body>
+</html>
